@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<!--
+  Namn: Viktor Moe
+  Personnummer: [ANGE HÄR]
+-->
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hammurabi – spelet</title>
+    <link rel="stylesheet" href="hammurabi.css">
+    <script src="hammurabi.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f2f2f7;
+        color: #222;
+      }
+
+      header {
+        background: #3b5998;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      #spel, #info {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1;
+        min-width: 280px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      h2 {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 6px;
+      }
+
+      fieldset {
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      button, input[type="button"] {
+        background: #3b5998;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover, input[type="button"]:hover {
+        background: #2d4373;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #eee;
+        margin-top: 20px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+
+  <body onload="gameStart();">
+    <header>
+      <h1>Hammurabi</h1>
+      <p>Ett av de första datorspelen, nu på svenska</p>
+    </header>
+
+    <main>
+      <section id="spel">
+        <h2 id="year">År (uppdateras av spelet)</h2>
+
+        <ul id="people">
+          <li id="starved">(uppdateras)</li>
+          <li id="newcomers">(uppdateras)</li>
+          <li id="population">(uppdateras)</li>
+        </ul>
+
+        <ul id="economy">
+          <li id="acres">(uppdateras)</li>
+          <li id="bushels">(uppdateras)</li>
+          <li id="harvest">(uppdateras)</li>
+          <li id="rats">(uppdateras)</li>
+          <li id="price">(uppdateras)</li>
+        </ul>
+
+        <form>
+          <fieldset>
+            <legend>Tunnland att köpa/sälja: <span id="outputAcrestosellbuy"></span></legend>
+            <input type="button" value="-" id="minusbuttonAcrestosellbuy"
+              onclick="onChangeAcres('minusbuttonAcrestosellbuy');">
+            <input type="range" id="sliderAcrestosellbuy"
+              onchange="onChangeAcres('sliderAcrestosellbuy');">
+            <input type="button" value="+" id="plusbuttonAcrestosellbuy"
+              onclick="onChangeAcres('plusbuttonAcrestosellbuy');">
+          </fieldset>
+
+          <fieldset>
+            <legend>Mat till folket: <span id="outputFeedpeople"></span></legend>
+            <input type="button" value="-" id="minusbuttonFeedpeople"
+              onclick="onChangeFeeding('minusbuttonFeedpeople');">
+            <input type="range" id="sliderFeedpeople"
+              onchange="onChangeFeeding('sliderFeedpeople');">
+            <input type="button" value="+" id="plusbuttonFeedpeople"
+              onclick="onChangeFeeding('plusbuttonFeedpeople');">
+          </fieldset>
+
+          <fieldset>
+            <legend>Så med utsäde: <span id="outputPlantwithseed"></span></legend>
+            <input type="button" value="-" id="minusbuttonPlantwithseed"
+              onclick="onChangePlanting('minusbuttonPlantwithseed');">
+            <input type="range" id="sliderPlantwithseed"
+              onchange="onChangePlanting('sliderPlantwithseed');">
+            <input type="button" value="+" id="plusbuttonPlantwithseed"
+              onclick="onChangePlanting('plusbuttonPlantwithseed');">
+          </fieldset>
+
+          <button type="button" onclick="gameStart();">Starta om</button>
+          <button type="button" id="emph" onclick="finishTurn();">Bekräfta</button>
+        </form>
+      </section>
+
+      <aside id="info">
+        <h2>Om Hammurabi</h2>
+        <p>
+          Hammurabi var kung i Babylon på 1700-talet f.Kr. och känd för sina lagar.
+          I spelet styr du hans rike och måste balansera mat, mark och folk.
+        </p>
+
+        <h2>Om spelet</h2>
+        <p>
+          Hammurabi skrevs 1968 av Doug Dyment. Det var ett av de första
+          datorstrategispelen. Ursprungligen hette det The Sumer Game och kördes
+          i språket FOCAL.
+        </p>
+
+        <h2>Kort om reglerna</h2>
+        <ul>
+          <li>Spelet pågår i 10 år.</li>
+          <li>Varje år: köp/sälj mark, mata folket, så med utsäde.</li>
+          <li>Skördar, råttor och sjukdomar kan påverka resultatet slumpmässigt.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>© 2025 Hammurabi-projektet. Källa: Wikipedia (Hammurabi, Hamurabi).</p>
+    </footer>
+  </body>
+</html>

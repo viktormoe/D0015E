@@ -1,0 +1,43 @@
+/* this is a comment; comments are ignored by web browsers */
+
+h1 {
+  color: black;
+  text-decoration: underline;
+  
+}
+
+#people {
+  display: block;
+  padding-left: 0;
+  border: black 1px solid;
+  list-style: none;
+}
+
+#people li {
+  display: inline;
+  margin-right: 10px;
+  border: black 1px solid;
+}
+
+#economy {
+  display: block;
+  padding-left: 0;
+  border: black 1px solid;
+  list-style: none; /* a list with no visible item markers */
+  background-color: yellow;
+}
+
+#economy li {
+  margin-bottom: 1px;
+}
+
+.fieldset {
+  border-style: none; /* without this property, the slider area gets a border */
+}
+
+button {
+  margin: 30px 25px 0 0;
+  padding: 10px 15px;
+}
+
+
