@@ -1,11 +1,10 @@
-/* Simple, modern, and clean styling */
 
 :root {
   --bg: #f7f7fb;
   --card: #ffffff;
   --text: #222222;
   --muted: #e5e7eb;
-  --accent: #4f46e5; /* indigo */
+  --accent: #4f46e5; 
   --accent-contrast: #ffffff;
 }
 
@@ -44,7 +43,7 @@ header {
   border-bottom: 1px solid var(--muted);
 }
 
-/* Stats cards */
+/* Stats */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -91,7 +90,7 @@ legend {
   display: inline-block;
   margin-left: 6px;
   padding: 2px 8px;
-  background: #eef2ff; /* light indigo */
+  background: #eef2ff; 
   border: 1px solid #c7d2fe;
   color: #3730a3;
   border-radius: 999px;
@@ -143,7 +142,6 @@ input[type="button"]:hover {
   margin-top: 8px;
 }
 
-/* Small screens */
 @media (max-width: 640px) {
   .stat-list {
     grid-template-columns: 1fr;
