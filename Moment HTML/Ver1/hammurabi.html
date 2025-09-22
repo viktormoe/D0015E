@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hammurabi</title>
   <link rel="stylesheet" href="hammurabi.css" />
@@ -14,88 +14,103 @@
       <h2 id="year">År 1 av 10</h2>
     </header>
 
-    <section class="hammurabi-history">
-      <h2>Hammurabi – kungen och lagen</h2>
-      <p>
-        Hammurabi (ca 1792–1750 f.Kr.) var kung i Babylon och är känd för sina lagar –
-        en av de äldsta bevarade lagtexterna. Riket blev starkare under hans tid.
-      </p>
-      <p>
-        Lagarna täckte handel, byggande och brott (t.ex. principen
-        <em>”öga för öga”</em>) och visar försöket att skapa ordning och rättvisa.
-      </p>
-    </section>
+    <div class="layout">
+      <div class="game">
+        <section class="cards">
+          <ul id="people" class="stat-list">
+            <li id="starved">Svält i år: 0</li>
+            <li id="newcomers">Nya invånare: 0</li>
+            <li id="population">Befolkning: 100</li>
+          </ul>
 
-    <section class="cards">
-      <ul id="people" class="stat-list">
-        <li id="starved">Svält i år: 0</li>
-        <li id="newcomers">Nya invånare: 0</li>
-        <li id="population">Befolkning: 100</li>
-      </ul>
+          <ul id="economy" class="stat-list">
+            <li id="acres">Mark (tunnland): 1000</li>
+            <li id="bushels">Spannmål: 2800</li>
+            <li id="harvest">Skörd i år: 0</li>
+            <li id="rats">Råttor åt: 0</li>
+            <li id="price">Pris per tunnland: 20</li>
+          </ul>
+        </section>
 
-      <ul id="economy" class="stat-list">
-        <li id="acres">Mark (tunnland): 1000</li>
-        <li id="bushels">Spannmål: 2800</li>
-        <li id="harvest">Skörd i år: 0</li>
-        <li id="rats">Råttor åt: 0</li>
-        <li id="price">Pris per tunnland: 20</li>
-      </ul>
-    </section>
+        <form class="controls" action="javascript:void(0);">
+          <fieldset class="fieldset">
+            <legend>
+              Tunnland att sälja/köpa:
+              <span id="outputAcrestosellbuy" class="output">0</span>
+            </legend>
+            <div class="control-row">
+              <input type="button" value="-" id="minusbuttonAcrestosellbuy"
+                     onclick="onChangeAcres('minusbuttonAcrestosellbuy');" />
+              <input type="range" id="sliderAcrestosellbuy"
+                     onchange="onChangeAcres('sliderAcrestosellbuy');" />
+              <input type="button" value="+" id="plusbuttonAcrestosellbuy"
+                     onclick="onChangeAcres('plusbuttonAcrestosellbuy');" />
+            </div>
+          </fieldset>
 
-    <form class="controls" action="javascript:void(0);">
-      <fieldset class="fieldset">
-        <legend>
-          Tunnland att sälja/köpa:
-          <span id="outputAcrestosellbuy" class="output">0</span>
-        </legend>
-        <div class="control-row">
-          <input type="button" value="-" id="minusbuttonAcrestosellbuy"
-                 onclick="onChangeAcres('minusbuttonAcrestosellbuy');" />
-          <input type="range" id="sliderAcrestosellbuy"
-                 onchange="onChangeAcres('sliderAcrestosellbuy');" />
-          <input type="button" value="+" id="plusbuttonAcrestosellbuy"
-                 onclick="onChangeAcres('plusbuttonAcrestosellbuy');" />
-        </div>
-      </fieldset>
+          <fieldset class="fieldset">
+            <legend>
+              Mat till folket (spannmål):
+              <span id="outputFeedpeople" class="output">0</span>
+            </legend>
+            <div class="control-row">
+              <input type="button" value="-" id="minusbuttonFeedpeople"
+                     onclick="onChangeFeeding('minusbuttonFeedpeople');" />
+              <input type="range" id="sliderFeedpeople"
+                     onchange="onChangeFeeding('sliderFeedpeople');" />
+              <input type="button" value="+" id="plusbuttonFeedpeople"
+                     onclick="onChangeFeeding('plusbuttonFeedpeople');" />
+            </div>
+          </fieldset>
 
-      <fieldset class="fieldset">
-        <legend>
-          Mat till folket (spannmål):
-          <span id="outputFeedpeople" class="output">0</span>
-        </legend>
-        <div class="control-row">
-          <input type="button" value="-" id="minusbuttonFeedpeople"
-                 onclick="onChangeFeeding('minusbuttonFeedpeople');" />
-          <input type="range" id="sliderFeedpeople"
-                 onchange="onChangeFeeding('sliderFeedpeople');" />
-          <input type="button" value="+" id="plusbuttonFeedpeople"
-                 onclick="onChangeFeeding('plusbuttonFeedpeople');" />
-        </div>
-      </fieldset>
+          <fieldset class="fieldset">
+            <legend>
+              Så med utsäde (spannmål):
+              <span id="outputPlantwithseed" class="output">0</span>
+            </legend>
+            <div class="control-row">
+              <input type="button" value="-" id="minusbuttonPlantwithseed"
+                     onclick="onChangePlanting('minusbuttonPlantwithseed');" />
+              <input type="range" id="sliderPlantwithseed"
+                     onchange="onChangePlanting('sliderPlantwithseed');" />
+              <input type="button" value="+" id="plusbuttonPlantwithseed"
+                     onclick="onChangePlanting('plusbuttonPlantwithseed');" />
+            </div>
+          </fieldset>
 
-      <fieldset class="fieldset">
-        <legend>
-          Så med utsäde (spannmål):
-          <span id="outputPlantwithseed" class="output">0</span>
-        </legend>
-        <div class="control-row">
-          <input type="button" value="-" id="minusbuttonPlantwithseed"
-                 onclick="onChangePlanting('minusbuttonPlantwithseed');" />
-          <input type="range" id="sliderPlantwithseed"
-                 onchange="onChangePlanting('sliderPlantwithseed');" />
-          <input type="button" value="+" id="plusbuttonPlantwithseed"
-                 onclick="onChangePlanting('plusbuttonPlantwithseed');" />
-        </div>
-      </fieldset>
-
-      <div class="actions">
-        <button type="button" class="btn" onclick="gameStart();">Starta om</button>
-        <button type="button" id="emph" class="btn btn-primary" onclick="finishTurn();">
-          Detta är min order!
-        </button>
-        <button type="button" class="btn" onclick="help();">Hjälp</button>
+          <div class="actions">
+            <button type="button" class="btn" onclick="gameStart();">Starta om</button>
+            <button type="button" id="emph" class="btn btn-primary" onclick="finishTurn();">
+              Detta är min order!
+            </button>
+            <button type="button" class="btn" onclick="help();">Hjälp</button>
+          </div>
+        </form>
       </div>
-    </form>
+
+      <aside class="rightbox">
+        <section class="hammurabi-history">
+          <h2>Hammurabi – kungen och lagen</h2>
+          <p>
+            Hammurabi (ca 1792–1750 f.Kr.) var kung i Babylon och är känd för sina lagar –
+            en av de äldsta bevarade lagtexterna. Riket blev starkare under hans tid.
+          </p>
+          <p>
+            Lagarna täckte handel, byggande och brott (t.ex. principen
+            <em>”öga för öga”</em>) och visar försöket att skapa ordning och rättvisa.
+          </p>
+        </section>
+
+        <section class="hammurabi-history">
+          <h2>Spelets historia</h2>
+          <p>Spelet skrevs av Doug Dyment vid företaget Digital Equipment of Canada.</p>
+          <p>
+            Det kallades ursprungligen The Sumer Game och listades som DECUS NO. FOCAL8-5
+            i företagets programbibliotek för språket FOCAL (1968).
+          </p>
+        </section>
+      </aside>
+    </div>
   </main>
 
   <div id="helpPopup" class="popup" hidden>
