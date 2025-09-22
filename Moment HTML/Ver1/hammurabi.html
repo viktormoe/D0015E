@@ -7,6 +7,24 @@
     <link rel="stylesheet" type="text/css" href="hammurabi.css" />
     <script type="text/javascript" src="hammurabi.js"></script>
   </head>
+    <section class="hammurabi-history">
+  <h2>Hammurabi – kungen och lagen</h2>
+  <p>
+    Hammurabi (ca 1792–1750 f.Kr.) var en av Babylons mest berömda kungar. 
+    Han enade Mesopotamien och gjorde Babylon till ett mäktigt rike.
+  </p>
+  <p>
+    Mest känd är han för <strong>Hammurabis lagar</strong>, en av världens äldsta bevarade lagtexter. 
+    På en stor sten stela lät han rista in nästan 300 paragrafer som styrde allt från handel och byggande 
+    till brott och straff – ofta med den berömda principen 
+    <em>”öga för öga, tand för tand”</em>.
+  </p>
+  <p>
+    Hammurabis tid formade både lag och samhälle i det forntida Mesopotamien, 
+    och hans namn lever kvar som symbol för rättvisa och härskarkonst.
+  </p>
+</section>
+
   <body onload="gameStart();">
     <main class="container">
       <header>
@@ -25,7 +43,7 @@
           <li id="acres">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
           <li id="bushels">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
           <li id="harvest">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
-          <li id="rats">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+          <li id="rats">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>Hammurabi
           <li id="price">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
         </ul>
       </section>
@@ -113,7 +131,18 @@
           <button type="button" class="btn" onclick="gameStart();">Starta om</button>
           <button type="button" id="emph" class="btn btn-primary" onclick="finishTurn();">
             Detta är min order!
-          </button>
+          <button type="button" onclick="help();">Hjälp</button>
+
+          <div id="helpPopup" class="popup" hidden>
+          <h3>Spelregler</h3>
+          <ul>
+            <li>Spelet spelas i 10 rundor.</li>
+            <li>Varje spelare får 3 drag per runda.</li>
+            <li>Vinst = 3 poäng, Oavgjort = 1, Förlust = 0.</li>
+            <li>Flest poäng vinner efter 10 rundor.</li>
+          </ul>
+          <button onclick="help()">Stäng</button>
+          </div>
         </div>
       </form>
     </main>

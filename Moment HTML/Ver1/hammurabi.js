@@ -120,6 +120,11 @@ function gameStart() {
 	writeGameState();
 }
 
+function help() {
+  const popup = document.getElementById("helpPopup");
+  popup.hidden = !popup.hidden; // togglar synlighet
+}
+
 /* Takes the value of the slider for acres to sell or buy
    and adds it to the acres value. The result is stored
    in internal acres. */
