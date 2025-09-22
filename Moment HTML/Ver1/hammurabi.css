@@ -1,208 +1,151 @@
-/*
-  författare: viktor moe, personnummer: [ange här]
-  css för hammurabi-uppgiften. allt indenterat, små bokstäver,
-  en deklaration per rad, tomrad mellan regelmängder.
-*/
+/* Simple, modern, and clean styling */
 
 :root {
-  --bg: #0f1324;
-  --panel: #161b31;
-  --ink: #e5e7eb;
-  --muted: #9ca3af;
-  --line: #2a315a;
-  --accent: #7dd3fc;
-  --accent2: #a7f3d0;
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #e5e7eb;
+  --accent: #4f46e5; /* indigo */
+  --accent-contrast: #ffffff;
 }
 
-* {
-  box-sizing: border-box;
+html, body {
+  height: 100%;
 }
 
-html,
 body {
   margin: 0;
-  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
   background: var(--bg);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, "segoe ui", roboto, sans-serif;
-  line-height: 1.6;
 }
 
-.wrap {
-  max-width: 1100px;
+.container {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 24px 16px 48px;
 }
 
-.site-header {
-  border-bottom: 1px solid var(--line);
-  background: #1b2140;
+h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
 }
 
-.site-title {
+h2#year {
+  margin: 0 0 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--muted);
+}
+
+/* Stats cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-list {
+  list-style: none;
   margin: 0;
-  padding-top: 20px;
-  font-size: 36px;
-  color: var(--accent);
-}
-
-.tagline {
-  margin: 6px 0 16px 0;
-  color: var(--muted);
-}
-
-.topnav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 14px;
-}
-
-.topnav a {
-  text-decoration: none;
-  color: var(--ink);
-  background: #21284a;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid #33407a;
-}
-
-.topnav a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.layout {
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 20px;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 16px;
 }
 
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+.stat-list li {
+  padding: 4px 0;
 }
 
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.panel h2 {
-  margin-top: 0;
-  color: var(--accent2);
-}
-
-/* behåll spel-id:n som js använder men ge dem stil */
-
-#people {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-left: 0;
-  margin: 10px 0 12px 0;
-  list-style: none;
-}
-
-#people li {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px 10px;
-  background: #0e1224;
-}
-
-#economy {
+/* Controls */
+.controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  padding-left: 0;
-  margin: 0 0 12px 0;
-  list-style: none;
-  background: transparent;
+  gap: 12px;
 }
-
-@media (max-width: 600px) {
-  #economy {
-    grid-template-columns: 1fr;
-  }
-}
-
-#economy li {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px 10px;
-  background: #0e1224;
-}
-
-/* formulär och knappar */
 
 .fieldset {
-  border: none;
-  margin: 12px 0;
-  padding: 8px 0 0 0;
+  margin: 0;
+  padding: 12px 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
 }
 
 legend {
-  color: var(--ink);
+  padding: 0 6px;
   font-weight: 600;
 }
 
-input[type="range"] {
-  width: 220px;
+.output {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  background: #eef2ff; /* light indigo */
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
 }
 
-button,
-input[type="button"] {
-  margin: 14px 12px 0 0;
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+input[type="range"] {
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+input[type="button"],
+button {
+  appearance: none;
+  border: 1px solid var(--muted);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
   padding: 8px 12px;
-  color: var(--ink);
-  background: #1e293b;
-  border: 1px solid #3b82f6;
-  border-radius: 10px;
   cursor: pointer;
+}
+
+button.btn {
+  margin-right: 10px;
+}
+
+button.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
 }
 
 button:hover,
 input[type="button"]:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  filter: brightness(0.98);
 }
 
 .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 8px;
 }
 
-/* hjälpsektion */
-
-.help {
-  margin-top: 14px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px;
-  background: #0e1224;
-}
-
-/* info-kolumn */
-
-.info p {
-  margin-top: 8px;
-}
-
-.refs {
-  list-style: square;
-  padding-left: 18px;
-}
-
-/* footer */
-
-.site-footer {
-  margin-top: 22px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  text-align: center;
-  padding: 14px 0 24px 0;
+/* Small screens */
+@media (max-width: 640px) {
+  .stat-list {
+    grid-template-columns: 1fr;
+  }
 }
