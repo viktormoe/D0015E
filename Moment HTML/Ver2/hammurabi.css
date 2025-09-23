@@ -1,0 +1,127 @@
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, "Noto Sans", Arial, sans-serif;
+  background: #8fb5ec;
+  color: #111827;
+  margin: 0;
+  padding: 24px;
+}
+
+h1 {
+  color: #222;                 /* ändrat från black */
+  text-decoration: overline;   /* ändrat från underline */
+  margin: 0 0 12px 0;
+}
+
+/* People + Economy summaries */
+#people,
+#economy {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  flex: 1;
+  border-radius: 8px;
+}
+
+#people {
+  background-color: #f3f4f6;
+  padding: 12px;
+  border: 1px solid #333;      /* ändrat från black */
+}
+
+#people li {
+  display: inline;
+  margin-right: 12px;          /* ändrat från 10px */
+  border: 1px solid #444;      /* ändrat från black */
+}
+
+#economy {
+  background-color: #ffeb3b;   /* ändrat från yellow */
+  padding: 12px 4px 12px 4px;  /* padding ändrad, tidigare 12px / 0 */
+  border: 1px solid #555;      /* ändrat från black */
+}
+
+#economy li {
+  margin-bottom: 2px;          /* ändrat från 1px */
+}
+
+.fieldset {
+  border-style: none; 
+  margin-top: 16px;
+  padding: 0;
+}
+
+.fieldset legend {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+button {
+  margin: 28px 22px 0 0;       /* ändrat från 30px 25px 0 0 */
+  padding: 9px 14px;           /* ändrat från 10px 15px */
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f3f4f6;
+}
+
+#emph {
+  background: #2563eb;
+  color: #fff;
+  border-color: #1d4ed8;
+}
+
+#emph:hover {
+  background: #1d4ed8;
+}
+
+/* Container som håller allt med margin */
+.container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  margin: 24px auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Lägger economy och people bredvid varandra */
+.stats-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hjälp regler */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  max-width: 480px;
+  width: calc(100% - 48px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+}
+
+.hammurabi-history {
+  margin-top: 12px;
+  padding-right: 8px;
+} 
+
+.hammurabi-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 12px auto;
+}
