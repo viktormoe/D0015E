@@ -8,9 +8,9 @@ body {
 }
 
 h1 {
-  color: #222;                 /* ändrat från black */
-  text-decoration: overline;   /* ändrat från underline */
-  margin: 0 0 12px 0;
+  color: #201f1f;                 
+  text-decoration: underline;   
+  margin: 0 0 11px 0;
 }
 
 /* People + Economy summaries */
@@ -24,25 +24,23 @@ h1 {
 }
 
 #people {
-  background-color: #f3f4f6;
-  padding: 12px;
-  border: 1px solid #333;      /* ändrat från black */
+  background-color: #f2f4f7;
+  padding: 15px;
 }
 
 #people li {
   display: inline;
-  margin-right: 12px;          /* ändrat från 10px */
-  border: 1px solid #444;      /* ändrat från black */
+  margin-right: 12px;          
 }
 
 #economy {
-  background-color: #ffeb3b;   /* ändrat från yellow */
-  padding: 12px 4px 12px 4px;  /* padding ändrad, tidigare 12px / 0 */
-  border: 1px solid #555;      /* ändrat från black */
+  background-color: #ffeb3b;   
+  padding: 12px 4px 12px 4px;  
+  border: 1px solid #555;      
 }
 
 #economy li {
-  margin-bottom: 2px;          /* ändrat från 1px */
+  margin-bottom: 2px;          
 }
 
 .fieldset {
@@ -57,8 +55,8 @@ h1 {
 }
 
 button {
-  margin: 28px 22px 0 0;       /* ändrat från 30px 25px 0 0 */
-  padding: 9px 14px;           /* ändrat från 10px 15px */
+  margin: 28px 22px 0 0;       
+  padding: 9px 14px;           
   border-radius: 6px;
   border: 1px solid #d1d5db;
   background: #f9fafb;
