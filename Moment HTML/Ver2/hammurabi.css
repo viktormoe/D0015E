@@ -49,6 +49,12 @@ h1 {
   padding: 0;
 }
 
+.fieldset input[type="range"] {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+
 button {
   margin: 28px 22px 0 0;       
   padding: 9px 14px;           
