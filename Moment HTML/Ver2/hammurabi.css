@@ -30,8 +30,8 @@ h1 {
 }
 
 #economy {
-  background-color: #ffeb3b;   
-  padding: 12px 4px 12px 4px;  
+  background-color: #ffe815;   
+  padding: 15px;
   border: 1px solid #555;      
 }
 
@@ -69,15 +69,13 @@ button:hover {
 
 /* Container som håller allt med margin */
 .container {
-  position: relative;
   max-width: 900px;
-  width: 100%;
   margin: 24px auto;
-  border: 1px solid #e5e7eb;
+  border: 2px solid #e5e7eb;
   border-radius: 10px;
   padding: 20px 24px;
   background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Lägger economy och people bredvid varandra */
