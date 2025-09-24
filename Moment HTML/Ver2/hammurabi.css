@@ -59,9 +59,7 @@ button {
   margin: 28px 22px 0 0;       
   padding: 9px 14px;           
   border-radius: 6px;
-  border: 1px solid #d1d5db;
   background: #f9fafb;
-  cursor: pointer;
 }
 
 button:hover {
