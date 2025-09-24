@@ -378,3 +378,5 @@ function help() {
   const el = document.getElementById("helpPopup");
   el.toggleAttribute("hidden");
 }
+
+
