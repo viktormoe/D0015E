@@ -378,7 +378,3 @@ function help() {
   const el = document.getElementById("helpPopup");
   el.toggleAttribute("hidden");
 }
-
-function closeOnEsc(e) {
-  if (e.key === "Escape") help();
-}
