@@ -99,3 +99,9 @@ button:hover {
   padding-right: 8px;
 } 
 
+.hammurabi-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
