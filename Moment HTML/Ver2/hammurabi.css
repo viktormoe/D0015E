@@ -26,11 +26,7 @@ h1 {
 #people {
   background-color: #f2f4f7;
   padding: 15px;
-}
-
-#people li {
-  display: inline;
-  margin-right: 12px;          
+  border: 1px solid #555;      
 }
 
 #economy {
@@ -39,14 +35,9 @@ h1 {
   border: 1px solid #555;      
 }
 
-#economy li {
-  margin-bottom: 2px;          
-}
-
 .fieldset {
   border-style: none; 
   margin-top: 16px;
-  padding: 0;
 }
 
 .fieldset input[type="range"] {
